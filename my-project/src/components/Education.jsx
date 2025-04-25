@@ -54,7 +54,7 @@ const Education = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-red-50 ">
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <motion.div
@@ -63,11 +63,11 @@ const Education = () => {
           variants={fadeIn}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-900 dark:text-red-900 mb-4">
             Education
           </h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-4" />
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-4" />
+          <p className="text-lg text-gray-900 dark:text-gray-900 max-w-2xl mx-auto">
             My academic journey and achievements
           </p>
         </motion.div>
@@ -81,21 +81,21 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gray  rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Header */}
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-teal-100 dark:bg-teal-900 rounded-lg">
+                <div className="p-3 bg-blue-100 dark:bg-red-900 text-blue-100 rounded-lg">
                   {edu.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-bold text-red-900 ">
                     {edu.degree}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-900 ">
                     {edu.institute}
                   </p>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-700  mt-2">
                     <Calendar className="w-4 h-4" />
                     <span>{edu.duration}</span>
                   </div>
@@ -104,13 +104,13 @@ const Education = () => {
 
               {/* Highlights */}
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                <h4 className="text-sm font-semibold text-gray-700  mb-3">
                   Key Focus Areas
                 </h4>
                 <div className="space-y-2">
                   {edu.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                      <ChevronRight className="w-4 h-4 text-teal-500" />
+                    <div key={idx} className="flex items-center gap-2 text-gray-600 ">
+                      <ChevronRight className="w-4 h-4 text-red-500" />
                       <span>{highlight}</span>
                     </div>
                   ))}
@@ -119,13 +119,13 @@ const Education = () => {
 
               {/* Achievements */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                <h4 className="text-sm font-semibold text-gray-700  mb-3">
                   Notable Achievements
                 </h4>
                 <div className="space-y-2">
                   {edu.achievements.map((achievement, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                      <Award className="w-4 h-4 text-teal-500" />
+                    <div key={idx} className="flex items-center gap-2 text-gray-600 ">
+                      <Award className="w-4 h-4 text-red-500" />
                       <span>{achievement}</span>
                     </div>
                   ))}

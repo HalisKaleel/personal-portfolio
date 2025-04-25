@@ -26,7 +26,7 @@ const Projects = () => {
       id: 1,
       title: 'Predictive Analytics Dashboard',
       description: 'Real-time data visualization and predictive modeling platform for business analytics.',
-      image: 'project1.jpg',
+      image: 'pro1.jpg',
       category: 'data-science',
       status: 'completed',
       technologies: ['Python', 'TensorFlow', 'React', 'MongoDB'],
@@ -78,7 +78,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-red-50">
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <motion.div
@@ -88,11 +88,11 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900  mb-4">
             My Projects
           </h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-4" />
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-red-500 mx-auto mb-4" />
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Featured projects that showcase my skills in Data Science, Machine Learning, and more.
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ const Projects = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
                 ${selectedCategory === category.id
-                  ? 'bg-teal-500 text-white'
+                  ? 'bg-red-700 text-white'
                   : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
             >
@@ -130,7 +130,7 @@ const Projects = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative bg-gray-900  rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Project Image */}
@@ -157,7 +157,7 @@ const Projects = () => {
                     {project.technologies.map((tech, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm"
+                        className="flex items-center gap-1 px-3 py-1 bg-sky-900  rounded-full text-sm"
                       >
                         {getTechIcon(tech)}
                         <span className="text-gray-700 dark:text-gray-300">{tech}</span>
@@ -171,7 +171,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"
+                      className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <FaGithub className="w-5 h-5" />
@@ -182,7 +182,7 @@ const Projects = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"
+                        className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <ExternalLink className="w-5 h-5" />

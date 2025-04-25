@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
@@ -38,8 +39,8 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90" />
-        <div className="absolute inset-0 bg-[url('hero.png')] bg-cover bg-center bg-no-repeat mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-red-900/90" />
+        <div className="absolute inset-0 bg-[url('/personal-portfolio/hero.png')] bg-cover bg-center bg-no-repeat mix-blend-overlay" />
       </div>
 
       {/* Content Container */}
@@ -61,15 +62,15 @@ const Hero = () => {
             </motion.h1>
 
             <motion.h2
-              className="text-xl md:text-2xl text-teal-300 font-semibold flex flex-wrap gap-2 justify-center items-center"
+              className="text-xl md:text-2xl text-red-100 font-semibold flex flex-wrap gap-2 justify-center items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <span>Data Scientist</span>
-              <span className="text-white">|</span>
+              <span className="text-[#94B4C1]">|</span>
               <span>ML Enthusiast</span>
-              <span className="text-white">|</span>
+              <span className="text-[#94B4C1]">|</span>
               <span>Problem Solver</span>
             </motion.h2>
 
@@ -91,7 +92,7 @@ const Hero = () => {
             >
               <button
                 onClick={() => setShowSocial(true)}
-                className="px-8 py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg 
+                className="px-8 py-3 bg-red-600 hover:bg-red-800 text-white font-semibold rounded-lg 
                            shadow-md transition duration-300 transform hover:scale-105"
               >
                 Let's Connect
@@ -148,7 +149,7 @@ const Hero = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500
+                  className="p-3 rounded-full bg-red-100 dark:bg-red-700 hover:bg-red-500 hover:text-white dark:hover:bg-red-500
                              transition transform hover:scale-110"
                 >
                   {link.icon}

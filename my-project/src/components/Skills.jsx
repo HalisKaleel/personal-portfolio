@@ -108,7 +108,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-red-50 ">
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <motion.div
@@ -117,11 +117,11 @@ const Skills = () => {
           variants={fadeIn}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900  mb-4">
             Skills & Expertise
           </h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-4" />
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-red-800 mx-auto mb-4" />
+          <p className="text-lg text-gray-600  max-w-2xl mx-auto">
             Technical proficiency and tools that power my data-driven solutions
           </p>
         </motion.div>
@@ -135,14 +135,14 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gray rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-teal-100 dark:bg-teal-900 rounded-lg">
+                <div className="p-2 bg-red-900 text-gray-100  rounded-lg">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold text-red-900 ">
                   {category.category}
                 </h3>
               </div>
@@ -154,23 +154,23 @@ const Skills = () => {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         {getSkillIcon(category.category, skill.name)}
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">
+                        <span className="text-gray-700  font-medium">
                           {skill.name}
                         </span>
                       </div>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                      <span className="text-sm text-gray-500 ">
                         {skill.level}%
                       </span>
                     </div>
                     
                     {/* Progress Bar */}
-                    <div className="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-2 bg-gray-400 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: idx * 0.1 }}
-                        className="h-full bg-teal-500 rounded-full"
+                        className="h-full bg-red-500 rounded-full"
                       />
                     </div>
 
@@ -180,7 +180,7 @@ const Skills = () => {
                         {skill.subSkills.map((subSkill, subIdx) => (
                           <span
                             key={subIdx}
-                            className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full"
+                            className="text-xs px-2 py-1 bg-gray-900 text-gray-100 rounded-full"
                           >
                             {subSkill}
                           </span>

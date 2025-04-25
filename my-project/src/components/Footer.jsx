@@ -46,7 +46,7 @@ const Footer = () => {
                   key={social.name}
                   href={social.href}
                   whileHover={{ y: -2 }}
-                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors duration-300"
+                  className="p-2 bg-red-700 text-gray-100   rounded-full hover:bg-red-100 hover:text-gray-600 d transition-colors duration-300"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -65,7 +65,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300"
+                    className="text-gray-600 dark:text-gray-300 hover:text-red-600 d transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -80,6 +80,14 @@ const Footer = () => {
               Contact
             </h3>
             <ul className="space-y-2">
+              <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                <Mail className="w-5 h-5" />
+                <span>halis@example.com</span>
+              </li>
+              <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                <Mail className="w-5 h-5" />
+                <span>halis@example.com</span>
+              </li>
               <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
                 <Mail className="w-5 h-5" />
                 <span>halis@example.com</span>
@@ -102,12 +110,12 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="flex-1 px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-teal-500 text-white rounded-r-lg hover:bg-teal-600 transition-colors duration-300"
+                  className="px-4 py-2 bg-red-700 text-white rounded-r-lg hover:bg-red-900 transition-colors duration-300"
                 >
                   <Send className="w-5 h-5" />
                 </button>

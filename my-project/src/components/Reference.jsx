@@ -19,7 +19,7 @@ const references = [
       email: "prasanna.h@slit.lk"
     },
     avatar: "PH",
-    color: "bg-purple-500"
+    color: "bg-red-500"
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const references = [
       email: "ahsan.s@h2o.ai"
     },
     avatar: "AS",
-    color: "bg-teal-500"
+    color: "bg-red-500"
   }
 ];
 
@@ -44,7 +44,7 @@ const Reference = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-red-50 ">
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <motion.div
@@ -53,11 +53,11 @@ const Reference = () => {
           variants={fadeIn}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900  mb-4">
             Professional References
           </h2>
-          <div className="w-24 h-1 bg-teal-500 mx-auto mb-4" />
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-red-500 mx-auto mb-4" />
+          <p className="text-lg text-gray-600  max-w-2xl mx-auto">
             Recommendations from industry leaders and academic mentors
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ const Reference = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gray-100 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   {/* Reference Header */}
                   <div className="flex items-start gap-6 mb-6">
@@ -98,10 +98,10 @@ const Reference = () => {
                       {reference.avatar}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      <h3 className="text-2xl font-bold text-red-900 ">
                         {reference.name}
                       </h3>
-                      <p className="text-teal-600 dark:text-teal-400 font-medium">
+                      <p className="text-gray-900  font-medium">
                         {reference.designation}
                       </p>
                     </div>
@@ -109,12 +109,12 @@ const Reference = () => {
 
                   {/* Affiliation & Credentials */}
                   <div className="space-y-4 mb-6">
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center gap-2 text-gray-700 ">
                       <Building2 className="w-5 h-5" />
                       <span>{reference.affiliation}</span>
                     </div>
                     {reference.credentials && (
-                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                      <div className="flex items-center gap-2 text-gray-700 ">
                         <Award className="w-5 h-5" />
                         <span>{reference.credentials}</span>
                       </div>
@@ -123,11 +123,11 @@ const Reference = () => {
 
                   {/* Contact Information */}
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center gap-2 text-gray-700">
                       <Phone className="w-5 h-5" />
                       <span>{reference.contact.phone}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center gap-2 text-gray-700">
                       <Mail className="w-5 h-5" />
                       <span>{reference.contact.email}</span>
                     </div>
@@ -137,7 +137,7 @@ const Reference = () => {
                   <div className="mt-6 flex gap-4">
                     <a
                       href="#"
-                      className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors duration-300"
+                      className="p-2 bg-red-700  rounded-full hover:bg-red-900 transition-colors duration-300"
                       aria-label="LinkedIn Profile"
                     >
                       <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-300" />
