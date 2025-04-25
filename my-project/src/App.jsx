@@ -8,22 +8,35 @@ import Projects from "./components/Projects"
 import Reference from "./components/Reference"
 import Skills from "./components/Skills"
 
-
 function App() {
-
-
   return (
-    <>
-    <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Reference />
+    <div >
+      <Navbar />
+      <main >
+        <section id="home" >
+          <Hero />
+        </section>
+        <section id="about" >
+          <About />
+        </section>
+        <section id="education" >
+          <Education />
+        </section>
+        <section id="skills" >
+          <Skills />
+        </section>
+        <section id="projects" >
+          <Projects />
+        </section>
+        <section id="experience" >
+          <Experience />
+        </section>
+        <section id="contact" >
+          <Reference />
+        </section>
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

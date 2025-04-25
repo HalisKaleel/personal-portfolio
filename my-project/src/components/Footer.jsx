@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Send,Map,Phone } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -23,9 +23,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: '#' },
-    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: '#' },
-    { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: '#' },
+    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/HalisKaleel' },
+    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/halis-kaleel/' },
+    { name: 'Email', icon: <Mail className="w-5 h-5" />, href: '#' },
   ];
 
   return (
@@ -82,15 +82,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
                 <Mail className="w-5 h-5" />
-                <span>halis@example.com</span>
+                <span>mkmhalis@gmail.com
+                </span>
               </li>
               <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                <Mail className="w-5 h-5" />
-                <span>halis@example.com</span>
+                <Phone className="w-5 h-5" />
+                <span> 0779650063
+                </span>
               </li>
               <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                <Mail className="w-5 h-5" />
-                <span>halis@example.com</span>
+                <Map className="w-5 h-5" />
+                <span>Dharga Town, Kalutara</span>
               </li>
             </ul>
           </div>

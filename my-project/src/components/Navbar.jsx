@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [theme, setTheme] = useState('light');
 
   // Handle scroll effect
   useEffect(() => {
@@ -16,19 +15,31 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle theme toggle
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.classList.toggle('dark');
+  // Smooth scroll function
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsOpen(false);
   };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Education', href: '#education' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+   
   ];
 
   const mobileMenuVariants = {
@@ -52,6 +63,7 @@ const Navbar = () => {
             href="#home"
             className="text-2xl font-bold text-gray-900 dark:text-white"
             whileHover={{ scale: 1.05 }}
+            onClick={(e) => scrollToSection(e, '#home')}
           >
             Halis
           </motion.a>
@@ -64,24 +76,11 @@ const Navbar = () => {
                 href={link.href}
                 className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300"
                 whileHover={{ y: -2 }}
+                onClick={(e) => scrollToSection(e, link.href)}
               >
                 {link.name}
               </motion.a>
             ))}
-
-            {/* Theme Toggle */}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-teal-100 dark:hover:bg-teal-900 transition-colors duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {theme === 'light' ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -114,29 +113,12 @@ const Navbar = () => {
                     key={link.name}
                     href={link.href}
                     className="text-2xl font-medium text-gray-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => scrollToSection(e, link.href)}
                     whileHover={{ x: 10 }}
                   >
                     {link.name}
                   </motion.a>
                 ))}
-                <motion.button
-                  onClick={toggleTheme}
-                  className="flex items-center space-x-2 text-2xl font-medium text-gray-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400"
-                  whileHover={{ x: 10 }}
-                >
-                  {theme === 'light' ? (
-                    <>
-                      <Moon className="w-6 h-6" />
-                      <span>Dark Mode</span>
-                    </>
-                  ) : (
-                    <>
-                      <Sun className="w-6 h-6" />
-                      <span>Light Mode</span>
-                    </>
-                  )}
-                </motion.button>
               </div>
             </div>
           </motion.div>

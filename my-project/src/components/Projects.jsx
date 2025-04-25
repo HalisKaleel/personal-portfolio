@@ -17,44 +17,57 @@ const Projects = () => {
     { id: 'all', label: 'All Projects' },
     { id: 'data-science', label: 'Data Science' },
     { id: 'ml', label: 'Machine Learning' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'open-source', label: 'Open Source' },
+    
   ];
 
   const projects = [
-    {
-      id: 1,
-      title: 'Predictive Analytics Dashboard',
-      description: 'Real-time data visualization and predictive modeling platform for business analytics.',
-      image: 'pro1.jpg',
-      category: 'data-science',
-      status: 'completed',
-      technologies: ['Python', 'TensorFlow', 'React', 'MongoDB'],
-      github: 'https://github.com/yourusername/project1',
-      demo: 'https://demo.project1.com',
-    },
-    {
-      id: 2,
-      title: 'Deep Learning Image Classifier',
-      description: 'CNN-based image classification system with 95% accuracy on custom datasets.',
-      image: 'project2.jpg',
-      category: 'ml',
-      status: 'completed',
-      technologies: ['Python', 'TensorFlow', 'OpenCV'],
-      github: 'https://github.com/yourusername/project2',
-      demo: 'https://demo.project2.com',
-    },
-    {
-      id: 3,
-      title: 'Portfolio Website',
-      description: 'Modern, responsive portfolio website built with React and Tailwind CSS.',
-      image: 'project3.jpg',
-      category: 'web',
-      status: 'completed',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/yourusername/project3',
-      demo: 'https://yourportfolio.com',
-    },
+    
+      {
+        id: 1,
+        title: 'Enhancing Sri Lankan Railway Safety Using Computer Vision and Cloud Technologies',
+        description: 'Final year research project focused on preventing train-elephant collisions using real-time image processing and cloud-based solutions.',
+        image: 'pro1.png',
+        category: 'ml',
+        status: 'completed',
+        technologies: ['YOLO', 'OpenCV', 'React', 'PostgreSQL'],
+        github: 'https://github.com/HalisKaleel',
+        demo: 'https://www.linkedin.com/in/halis-kaleel'
+      },
+      {
+        id: 2,
+        title: 'Probability and Statistics Project (Predictive Model)',
+        description: 'Developed a predictive model for statistical data analysis using BI tools.',
+        image: 'pro2.png',
+        category: 'data-science',
+        status: 'completed',
+        technologies: ['Probability and Statistics', 'Power BI', 'MS Excel'],
+        github: 'https://github.com/HalisKaleel',
+        demo: ''
+      },
+      {
+        id: 3,
+        title: 'FDM Mini-Project (Data Mining)',
+        description: 'Mini data mining project built using Python, Streamlit, and data visualization libraries.',
+        image: 'fdm-project.jpg',
+        category: 'ml',
+        status: 'completed',
+        technologies: ['Python', 'Streamlit', 'Matplotlib', 'Pandas', 'NumPy'],
+        github: 'https://github.com/HalisKaleel',
+        demo: ''
+      },
+      {
+        id: 4,
+        title: 'Winning Horse Speed Prediction',
+        description: 'A statistical analysis project using Excel and Minitab to predict horse race outcomes.',
+        image: 'horse-speed.jpg',
+        category: 'data-science',
+        status: 'completed',
+        technologies: ['Excel', 'Minitab', 'Multiple Linear Regression'],
+        github: 'https://github.com/HalisKaleel',
+        demo: ''
+      }
+    
+    
     // Add more projects as needed
   ];
 

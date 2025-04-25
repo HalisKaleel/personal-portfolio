@@ -23,8 +23,8 @@ const Hero = () => {
 
   const socialLinks = [
     { icon: <Github className="w-6 h-6" />, url: "https://github.com/haliskaleel" },
-    { icon: <Linkedin className="w-6 h-6" />, url: "https://linkedin.com/in/haliskaleel" },
-    { icon: <Mail className="w-6 h-6" />, url: "mailto:contact@haliskaleel.com" }
+    { icon: <Linkedin className="w-6 h-6" />, url: "https://www.linkedin.com/in/halis-kaleel/" },
+    { icon: <Mail className="w-6 h-6" />, url: "mailto:mkmhalis@gmail.com" }
   ];
 
   const skills = [
