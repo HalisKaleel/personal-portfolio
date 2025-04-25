@@ -1,9 +1,18 @@
-import { motion } from "framer-motion";
-import { GraduationCap, BookOpenText, LineChart } from "lucide-react";
+import React from 'react';
+/* eslint-disable no-unused-vars */
+import { motion } from 'framer-motion';
+import {
+  GraduationCap,
+  BookOpenText,
+  Calendar,
+  Award,
+  ChevronRight,
+} from 'lucide-react';
 
 const educationData = [
   {
-    icon: <GraduationCap className="text-white w-6 h-6" />,
+    id: 1,
+    icon: <GraduationCap className="w-6 h-6" />,
     degree: "BSc (Hons) in IT – Specializing in Data Science",
     institute: "Sri Lanka Institute of Information Technology (SLIIT)",
     duration: "2020 – 2024",
@@ -12,9 +21,15 @@ const educationData = [
       "Data Analytics",
       "Internship at Bluechip Technologies",
     ],
+    achievements: [
+      "Dean's List - 2022, 2023",
+      "Best Research Project Award",
+      "Data Science Club President",
+    ],
   },
   {
-    icon: <BookOpenText className="text-white w-6 h-6" />,
+    id: 2,
+    icon: <BookOpenText className="w-6 h-6" />,
     degree: "BSc in Applied Science – Specializing in Mathematics",
     institute: "Rajarata University of Sri Lanka",
     duration: "2019 – 2023",
@@ -23,67 +38,105 @@ const educationData = [
       "Computational Mathematics",
       "Leadership – RUSL Hiking Club VP",
     ],
+    achievements: [
+      "First Class Honors",
+      "Student Representative",
+      "Research Publication in Mathematics",
+    ],
   },
-  
 ];
 
-function Education() {
+const Education = () => {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
   return (
-    <div>
-         <section id="education" className="py-16 bg-gradient-to-br from-slate-900 via-black to-slate-950 text-white px-4 md:px-10">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-6">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-inter">Education</h2>
-          <p className="text-gray-400 mt-2">My academic journey and achievements</p>
-        </div>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={fadeIn}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Education
+          </h2>
+          <div className="w-24 h-1 bg-teal-500 mx-auto mb-4" />
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            My academic journey and achievements
+          </p>
+        </motion.div>
 
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-400/60 via-white/20 to-slate-600 rounded-full" />
-
-          {/* Timeline Entries */}
-          <div className="space-y-20">
-            {educationData.map((edu, idx) => {
-              const isLeft = idx % 2 === 0;
-
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.2 }}
-                  viewport={{ once: true }}
-                  className={`relative flex flex-col md:flex-row items-center md:items-start ${isLeft ? "md:justify-start" : "md:justify-end"}`}
-                >
-                  {/* Connector Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 bg-teal-500 w-8 h-8 rounded-full flex items-center justify-center shadow-lg z-10 border-4 border-slate-900">
-                    {edu.icon}
+        {/* Education Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {educationData.map((edu, index) => (
+            <motion.div
+              key={edu.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              {/* Header */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className="p-3 bg-teal-100 dark:bg-teal-900 rounded-lg">
+                  {edu.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {edu.institute}
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{edu.duration}</span>
                   </div>
+                </div>
+              </div>
 
-                  {/* Spacer for alignment */}
-                  <div className={`md:w-1/2 ${isLeft ? "md:pr-10" : "md:pl-10"}`} />
+              {/* Highlights */}
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  Key Focus Areas
+                </h4>
+                <div className="space-y-2">
+                  {edu.highlights.map((highlight, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                      <ChevronRight className="w-4 h-4 text-teal-500" />
+                      <span>{highlight}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-                  {/* Card */}
-                  <div className="w-full md:w-1/2 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md border border-white/10">
-                    <h3 className="text-lg font-semibold text-white">{edu.degree}</h3>
-                    <p className="text-sm text-teal-400 mt-1">{edu.institute}</p>
-                    <p className="text-gray-400 text-sm mb-2">{edu.duration}</p>
-                    <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-                      {edu.highlights.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+              {/* Achievements */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                  Notable Achievements
+                </h4>
+                <div className="space-y-2">
+                  {edu.achievements.map((achievement, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                      <Award className="w-4 h-4 text-teal-500" />
+                      <span>{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-    </div>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;
