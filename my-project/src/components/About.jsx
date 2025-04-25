@@ -24,7 +24,7 @@ function About() {
         >
           {/* Section Title */}
           <div className="relative inline-block mb-4">
-            <h2 className="text-3xl md:text-4xl font-bold font-inter">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-inter">About Me</h2>
             <motion.div
               className="absolute bottom-0 left-0 h-[3px] w-20 bg-red-600 text-center rounded-full"
               initial={{ width: 0 }}

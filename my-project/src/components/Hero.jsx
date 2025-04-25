@@ -135,7 +135,7 @@ const Hero = () => {
             {/* Close Button */}
             <button
               onClick={() => setShowSocial(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-teal-500 transition-colors text-xl"
+              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition-colors text-xl"
             >
               ✕
             </button>

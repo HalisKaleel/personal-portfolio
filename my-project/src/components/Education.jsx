@@ -63,10 +63,10 @@ const Education = () => {
           variants={fadeIn}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-red-900 dark:text-red-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900  mb-4">
             Education
           </h2>
-          <div className="w-24 h-1 bg-blue-900 mx-auto mb-4" />
+          <div className="w-24 h-1 bg-red-900 mx-auto mb-4" />
           <p className="text-lg text-gray-900 dark:text-gray-900 max-w-2xl mx-auto">
             My academic journey and achievements
           </p>
